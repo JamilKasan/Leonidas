@@ -41,6 +41,9 @@ class RecipeResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->url(fn (Recipe $recipe) => $recipe->image_url)
+                    ->label('Image'),
             ])
             ->filters([
                 //
