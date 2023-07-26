@@ -34,7 +34,12 @@ class MenuResource extends Resource
                 ->options([
                     '1' => 'Yes',
                     '0' => 'No'
-                ])
+                ]),
+                Forms\Components\Select::make('active')
+                ->options([
+                    '1' => 'Yes',
+                    '0' => 'No'
+                ]),
             ]);
     }
 
@@ -46,7 +51,8 @@ class MenuResource extends Resource
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('slug'),
-                Tables\Columns\BooleanColumn::make('resource')
+                Tables\Columns\BooleanColumn::make('resource'),
+                Tables\Columns\BooleanColumn::make('active')
                 ,
                 //
             ])

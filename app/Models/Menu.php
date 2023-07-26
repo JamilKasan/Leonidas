@@ -13,6 +13,7 @@ class Menu extends Model
     protected $fillable = [
       'name',
       'slug',
-      'resource'
+      'resource',
+        'active'
     ];
 }
