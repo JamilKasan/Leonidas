@@ -60,7 +60,7 @@
                 </div>
                 @if($upcomingEvent != null)
                     <div class="flex flex-col bg-gray-400/5 p-8">
-                        <dt class="text-sm font-semibold leading-6 text-gray-600"><div>Upcoming event</div>{{ date('M d, Y', strtotime($upcomingEvent->start)) }} <div>{{ date('H:i', strtotime($upcomingEvent->start))  . '-' . date('H:i', strtotime($upcomingEvent->end))}}</div></dt>
+                        <dt class="text-sm font-semibold leading-6 text-gray-600"><div>Upcoming event</div>{{ date('Y-m-d') ==  date('Y-m-d', strtotime($upcomingEvent->start)) ? 'Today' : date('M d, Y', strtotime($upcomingEvent->start)) }} <div>{{ date('H:i', strtotime($upcomingEvent->start))  . '-' . date('H:i', strtotime($upcomingEvent->end))}}</div></dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">{{ $upcomingEvent->name }}</dd>
                     </div>
                 @endif
