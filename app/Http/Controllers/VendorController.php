@@ -12,7 +12,16 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        $vendors = Vendor::query()->get();
+        $addresses = [];
+        foreach ($vendors as $vendor)
+        {
+            $coords = $vendor->coordinates;
+//            return explode(',', $coords);
+            $info = ['long' => explode(',', $coords)['1'], 'lat' => explode(',', $coords)['0'], 'info' => '<b>' .  $vendor->name.   '</b><br>' . $vendor->address];
+            array_push($addresses, $info);
+        }
+        return view('vendors.index', compact('vendors', 'addresses'));
     }
 
     /**
