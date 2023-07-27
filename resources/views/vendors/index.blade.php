@@ -9,7 +9,7 @@
             </div>
             <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr sm:mt-20 lg:mx-0 lg:max-w-none">
                 <div class="py-8 lg:py-0 w-full">
-                    <x-maps-leaflet  :zoom-level="15" :center-point="['lat' => '5.8513880094368975' , 'long' => '-55.13034372206839']" :markers="$addresses"></x-maps-leaflet>
+                    <x-maps-leaflet  :zoom-level="15" :center-point="['lat' => '5.8513880094368975' , 'long' => '-55.13034372206839']" :markers="$addresses ?? null"></x-maps-leaflet>
                 </div>
             </div>
         </div>
